@@ -7,6 +7,6 @@ metadata:
   annotations:
     backstage.io/kubernetes-namespace: "${{values.namespace}}"
 spec:
-  type: InferenceService
-  lifecycle: dev
+  type: service
+  lifecycle: experimental
   owner: ${{ values.owner | default('guest')}}
