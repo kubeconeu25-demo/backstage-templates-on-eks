@@ -1,13 +1,12 @@
 ---
-apiVersion: serving.kserve.io/v1beta1
-kind: InferenceService
+apiVersion: backstage.io/v1alpha1
+kind: Component
 metadata:
   name: ${{values.name | dump}}
+  description: An inference service of ${{ values.owner | default('guest')}}
   annotations:
     backstage.io/kubernetes-namespace: "${{values.namespace}}"
 spec:
-  predictor:
-    model:
-      modelFormat:
-        name: ${{values.name | dump}}
-      storageUri: ${{values.url}}
+  type: InferenceService
+  lifecycle: dev
+  owner: ${{ values.owner | default('guest')}}
