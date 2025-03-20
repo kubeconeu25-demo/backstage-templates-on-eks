@@ -122,12 +122,12 @@ spec:
       action: github:repo:create
       input:
         repoUrl: ${{ parameters.repoUrl }}
-    - id: init-repo
-      name: Initialize Repository
-      action: github:repo:push
-      input:
-        repoUrl: ${{ parameters.repoUrl }}
-        defaultBranch: main
+    #- id: init-repo
+     # name: Initialize Repository
+      #action: github:repo:push
+      #input:
+       # repoUrl: ${{ parameters.repoUrl }}
+        #defaultBranch: main
     - id: wait
       name: Waiting for the repo to be ready
       action: "roadiehq:utils:sleep"
